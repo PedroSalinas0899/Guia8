@@ -11,5 +11,7 @@ class Ordenar {
         void insercion_binaria(int* ,int );
         void seleccion(int* , int );
         void shell(int* , int );
+        void quicksort(int* , int);
+        void quicksort2(int* , int, int );
         void imprimir(int* ,int );
 };

@@ -9,16 +9,16 @@
 using namespace std;
 
 int main(int argc, char *argv[]){
+    Ordenar ordenamiento = Ordenar();
     int tamano = stoi(argv[1]);
 
-    if(tamano > 1000000 or tamano <= 0){
+    if(tamano >= 1000000 or tamano <= 0){
         cout << "El numero ingresado no es valido." << endl;
     }
     else {
-        int *arreglo;
-        arreglo = new int[tamano];
+        int *arreglo = new int[tamano];
 
-        for(int i = 1; i <= tamano; i++){
+        for(int i = 0; i < tamano; i++){
             int numero_aleatorio = (rand() % tamano) + 1;
             arreglo[i] = numero_aleatorio;
         }
@@ -31,7 +31,7 @@ int main(int argc, char *argv[]){
         int *a6= new int[tamano];
         int *a7= new int[tamano];
 
-        for(int j = 1; j <= tamano; j++){
+        for(int j = 0; j < tamano; j++){
             a1[j] = arreglo[j];
             a2[j] = arreglo[j];
             a3[j] = arreglo[j];
@@ -41,7 +41,6 @@ int main(int argc, char *argv[]){
             a7[j] = arreglo[j];
         }
 
-        Ordenar ordenamiento;
         cout << "Metodo             | Tiempo" << endl;
         ordenamiento.burbuja_menor(a1, tamano);
         ordenamiento.burbuja_mayor(a2, tamano);
@@ -49,6 +48,7 @@ int main(int argc, char *argv[]){
         ordenamiento.insercion_binaria(a4, tamano);
         ordenamiento.seleccion(a5, tamano);
         ordenamiento.shell(a6, tamano);
+        ordenamiento.quicksort(a7, tamano);
         cout << " " << endl;
 
         bool ver = false;
@@ -68,6 +68,7 @@ int main(int argc, char *argv[]){
             cout << "Shell: ";
             ordenamiento.imprimir(a6, tamano);
             cout << "Quicksort: ";
+            ordenamiento.imprimir(a7, tamano);
         }
     }
     return 0;
