@@ -21,7 +21,7 @@ int main(int argc, char *argv[]){
         cout << "No mostrar arreglos [cualquier otro parametro]." << endl;
         return 0;
     }
-    else{
+    else if (numero_parametros > 2){
         cout << "Sobran pametros, sin embargo se continuara igual." << endl;
     }
     //bloque de expecion para determinar si el parametro 1 es valido
